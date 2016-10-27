@@ -14,7 +14,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-import java.io.Serializable;
 import java.util.List;
 
 @Service
@@ -27,6 +26,7 @@ public class UserServiceBean implements UserService {
     private EntityManager entityManager;
 
     private UserRepository repository;
+
     @Inject
     public UserServiceBean(UserRepository repository) {
         this.repository = repository;
@@ -45,28 +45,29 @@ public class UserServiceBean implements UserService {
     }
 
     @Override
+    @Transactional
+    public void delete(User user) {
+        if (entityManager.contains(user))
+            entityManager.remove(user);
+        else
+            entityManager.remove(entityManager.merge(user));
+    }
+
+    @Override
     @Transactional(readOnly = true)
     public User getUserById(long id) {
         LOGGER.debug(">>> getUserById for id =" + id);
         User user = repository.findOne(id);
         LOGGER.debug("user = " + user);
-        return repository.findOne(id);
+        return user;
     }
 
     @Override
     @Transactional(readOnly = true)
     public List<User> getList() {
         LOGGER.debug("Retrieving the list of all users");
-        return repository.findAll();
-    }
-
-    @Override
-    @Transactional
-    public void delete(User user) {
-        Serializable id = user.getId();
-        Object persistentInstance = entityManager.find(User.class, id);
-        if (persistentInstance != null) {
-            entityManager.remove(persistentInstance);
-        }
+        List<User> users = repository.findAll();
+        LOGGER.debug("users = " + users);
+        return users;
     }
 }

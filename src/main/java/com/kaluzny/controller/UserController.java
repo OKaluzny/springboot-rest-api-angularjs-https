@@ -17,11 +17,35 @@ import java.util.List;
 public class UserController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
-    private final UserService userService;
+    private UserService userService;
 
     @Inject
-    public UserController(final UserService userService) {
+    public UserController(UserService userService) {
         this.userService = userService;
+    }
+
+    @RequestMapping(
+            value = "/user",
+            method = {RequestMethod.POST, RequestMethod.PUT})
+    public User createUser(@RequestBody @Valid final User user) {
+        LOGGER.debug("Received request to create the {}", user);
+        return userService.save(user);
+    }
+
+    @RequestMapping(
+            value = "/user/{id}",
+            method = RequestMethod.DELETE)
+    public String deleteUserFromDB(@PathVariable("id") Long id) {
+        LOGGER.debug("INJECTED 'deleteUserFromDB' id: " + id);
+        try {
+            User user = new User(id);
+            LOGGER.debug("CREATED 'deleteUserFromDB' user: " + user.toString());
+            userService.delete(user);
+        } catch (Exception exception) {
+            return "Error deleting the user: " + exception.toString();
+        }
+        LOGGER.debug("<<< deleteUserFromDB... WITH result: User successfully deleted! New userSysStatus: \"-1\"");
+        return "User successfully deleted!";
     }
 
     @RequestMapping(
@@ -40,26 +64,6 @@ public class UserController {
     public User getUser(@PathVariable("id") Long id) {
         LOGGER.debug("Received request by id user");
         return userService.getUserById(id);
-    }
-
-    @RequestMapping(
-            value = "/user",
-            method = {RequestMethod.POST, RequestMethod.PUT})
-    public User createUser(@RequestBody @Valid final User user) {
-        LOGGER.debug("Received request to create the {}", user);
-        return userService.save(user);
-    }
-
-    @RequestMapping(
-            value = "/user/{id}",
-            method = RequestMethod.DELETE)
-    public String deleteUserFromDB(@PathVariable("id") Long id) {
-        LOGGER.debug("INJECTED 'deleteUserFromDB' id: " + id);
-        User user = new User(id);
-        LOGGER.debug("CREATED 'deleteUserFromDB' user: " + user.toString());
-        userService.delete(user);
-        LOGGER.debug("<<< deleteUserFromDB... WITH result: User successfully deleted! New userSysStatus: \"-1\"");
-        return "User successfully deleted!";
     }
 
     @ExceptionHandler
