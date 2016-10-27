@@ -28,9 +28,10 @@ public class User {
         this.id = id;
     }
 
-    public User(final long id, final String title) {
+    public User(long id, String title, long value) {
         this.id = id;
         this.title = title;
+        this.value = value;
     }
 
     public long getId() {

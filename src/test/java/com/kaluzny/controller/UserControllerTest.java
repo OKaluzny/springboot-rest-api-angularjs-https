@@ -44,7 +44,6 @@ public class UserControllerTest {
         return user;
     }
 
-
     @Test
     public void shouldListAllUsers() throws Exception {
         stubServiceToReturnExistingUsers(10);
@@ -58,5 +57,4 @@ public class UserControllerTest {
     private void stubServiceToReturnExistingUsers(int howMany) {
         when(userService.getList()).thenReturn(UserUtil.createUserList(howMany));
     }
-
 }

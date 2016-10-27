@@ -19,22 +19,22 @@ import java.util.List;
 
 @Service
 @Validated
-public class UserServiceImpl implements UserService {
+public class UserServiceBean implements UserService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
-    private final UserRepository repository;
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceBean.class);
 
     @PersistenceContext
     private EntityManager entityManager;
 
+    private UserRepository repository;
     @Inject
-    public UserServiceImpl(final UserRepository repository) {
+    public UserServiceBean(UserRepository repository) {
         this.repository = repository;
     }
 
     @Override
     @Transactional
-    public User save(@NotNull @Valid final User user) {
+    public User save(@NotNull @Valid User user) {
         LOGGER.debug("Creating {}", user);
         User existing = repository.findOne(user.getId());
         if (existing != null) {

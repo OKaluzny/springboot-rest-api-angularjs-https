@@ -17,7 +17,7 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
-public class UserServiceImplTest {
+public class UserServiceBeanTest {
 
     @Mock
     private UserRepository userRepository;
@@ -26,7 +26,7 @@ public class UserServiceImplTest {
 
     @Before
     public void setUp() throws Exception {
-        userService = new UserServiceImpl(userRepository);
+        userService = new UserServiceBean(userRepository);
     }
 
     @Test
@@ -82,5 +82,4 @@ public class UserServiceImplTest {
         assertTrue(list.isEmpty());
         verify(userRepository, times(1)).findAll();
     }
-
 }
