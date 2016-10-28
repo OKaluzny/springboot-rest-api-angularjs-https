@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/OKaluzny/spring-boot-rest.svg?branch=master)](https://travis-ci.org/OKaluzny/spring-boot-rest.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/OKaluzny/spring-boot-rest/badge.svg?branch=master)](https://coveralls.io/github/OKaluzny/spring-boot-rest?branch=master)
+
 Using Spring Boot, REST API Spring Data JPA and Hibernate
 
 # Tools
