@@ -1,16 +1,18 @@
 package com.kaluzny.service;
 
 import com.kaluzny.domain.User;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service("userService")
 public interface UserService {
 
-    public User save(User user);
+    User saveUser(User user);
 
-    public User getUserById(long id);
+    User getUserById(long id);
 
-    public List<User> getList();
+    List<User> findAllUsers();
 
-    public void delete(User user);
+    void deleteUserById(User user);
 }

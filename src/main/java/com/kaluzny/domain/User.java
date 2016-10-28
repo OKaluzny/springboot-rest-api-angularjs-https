@@ -9,7 +9,6 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @NotNull
     @Column(name = "ID", nullable = false, updatable = false)
     private long id;
 
@@ -32,6 +31,10 @@ public class User {
         this.id = id;
         this.title = title;
         this.value = value;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public long getId() {

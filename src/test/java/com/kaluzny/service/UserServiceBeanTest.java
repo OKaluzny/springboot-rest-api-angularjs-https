@@ -33,7 +33,7 @@ public class UserServiceBeanTest {
     public void shouldSaveNewUser_GivenThereDoesNotExistOneWithTheSameId_ThenTheSavedUserShouldBeReturned() throws Exception {
         final User savedUser = stubRepositoryToReturnUserOnSave();
         final User user = UserUtil.createUser();
-        final User returnedUser = userService.save(user);
+        final User returnedUser = userService.saveUser(user);
         // verify repository was called with user
         verify(userRepository, times(1)).save(user);
         assertEquals("Returned user should come from the repository", savedUser, returnedUser);
@@ -49,7 +49,7 @@ public class UserServiceBeanTest {
     public void shouldSaveNewUser_GivenThereExistsOneWithTheSameId_ThenTheExceptionShouldBeThrown() throws Exception {
         stubRepositoryToReturnExistingUser();
         try {
-            userService.save(UserUtil.createUser());
+            userService.saveUser(UserUtil.createUser());
             fail("Expected exception");
         } catch (UserAlreadyExistsException ignored) {
         }
@@ -64,7 +64,7 @@ public class UserServiceBeanTest {
     @Test
     public void shouldListAllUsers_GivenThereExistSome_ThenTheCollectionShouldBeReturned() throws Exception {
         stubRepositoryToReturnExistingUsers(10);
-        Collection<User> list = userService.getList();
+        Collection<User> list = userService.findAllUsers();
         assertNotNull(list);
         assertEquals(10, list.size());
         verify(userRepository, times(1)).findAll();
@@ -77,7 +77,7 @@ public class UserServiceBeanTest {
     @Test
     public void shouldListAllUsers_GivenThereNoneExist_ThenTheEmptyCollectionShouldBeReturned() throws Exception {
         stubRepositoryToReturnExistingUsers(0);
-        Collection<User> list = userService.getList();
+        Collection<User> list = userService.findAllUsers();
         assertNotNull(list);
         assertTrue(list.isEmpty());
         verify(userRepository, times(1)).findAll();

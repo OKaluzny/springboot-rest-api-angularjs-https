@@ -16,7 +16,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
-@Service
+@Service("userService")
 @Validated
 public class UserServiceBean implements UserService {
 
@@ -34,7 +34,7 @@ public class UserServiceBean implements UserService {
 
     @Override
     @Transactional
-    public User save(@NotNull @Valid User user) {
+    public User saveUser(@NotNull @Valid User user) {
         LOGGER.debug("Creating {}", user);
         User existing = repository.findOne(user.getId());
         if (existing != null) {
@@ -46,7 +46,7 @@ public class UserServiceBean implements UserService {
 
     @Override
     @Transactional
-    public void delete(User user) {
+    public void deleteUserById(User user) {
         if (entityManager.contains(user))
             entityManager.remove(user);
         else
@@ -64,7 +64,7 @@ public class UserServiceBean implements UserService {
 
     @Override
     @Transactional(readOnly = true)
-    public List<User> getList() {
+    public List<User> findAllUsers() {
         LOGGER.debug("Retrieving the list of all users");
         List<User> users = repository.findAll();
         LOGGER.debug("users = " + users);
