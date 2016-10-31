@@ -46,6 +46,11 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
         <!-- Hibernate validator -->
         <dependency>
             <groupId>org.hibernate</groupId>
