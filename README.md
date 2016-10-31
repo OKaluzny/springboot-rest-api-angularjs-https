@@ -13,7 +13,10 @@ Using Spring Boot, REST API Spring Data JPA and Hibernate
 
 # Build and Deploy
 
-Scripts for the local environment:
+Script for the local environment:
 
-* `app-build` - build the application.
-* `app-deploy` - deploy the application.
+* `app-build-deploy ` - build and deploy the application.
+
+# The example in the Postman:
+
+![alt tag](http://i.piccy.info/i9/a228232e1f46a8e972a6210e89eea46c/1477921146/58237/1085055/basic.jpg)
