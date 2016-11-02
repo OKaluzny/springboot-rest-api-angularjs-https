@@ -8,6 +8,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <name>Spring Boot REST Web Service</name>
     <description>Trainee project</description>
 
     <parent>
@@ -15,8 +16,6 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.4.0.RELEASE</version>
     </parent>
-
-    <name>Spring Boot REST Service</name>
 
     <properties>
         <java.version>1.8</java.version>
@@ -54,7 +53,7 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
-        <!-- mysql-connector-java-->
+        <!-- MySQL-connector-java-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
