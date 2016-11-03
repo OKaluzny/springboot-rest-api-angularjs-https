@@ -1,7 +1,9 @@
+# Spring Boot configuration
 spring:
   profiles:
-    active : development
+    active: development
 
+# Server configuration
 server:
   port: 8080
   sessionTimeout: 30
