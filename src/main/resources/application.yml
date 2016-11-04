@@ -2,6 +2,15 @@
 spring:
   profiles:
     active: development
+logging:
+  file: logs/dev_app.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    com.kaluzny: DEBUG
+    org.springframework: INFO
+    org.hibernate: DEBUG
 
 # Server configuration
 server:
