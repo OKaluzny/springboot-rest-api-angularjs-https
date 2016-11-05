@@ -35,7 +35,7 @@ public class UserServiceBean implements UserService {
     @Override
     @Transactional
     public User saveUser(@NotNull @Valid User user) {
-        LOGGER.debug("Creating {}", user);
+        LOGGER.debug("Save {}", user);
         User existing = repository.findOne(user.getId());
         if (existing != null) {
             throw new UserAlreadyExistsException(
@@ -45,8 +45,32 @@ public class UserServiceBean implements UserService {
     }
 
     @Override
+    @Transactional(readOnly = true)
+    public User findUserById(long id) {
+        LOGGER.debug("Search by id: " + id);
+        return repository.findOne(id);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<User> findAllUsers() {
+        LOGGER.debug("Retrieving the list of all users...");
+        return repository.findAll();
+    }
+
+    @Override
     @Transactional
-    public void deleteUserById(User user) {
+    public User updateUser(User user) {
+        LOGGER.debug("Updating... ", user);
+        if (!entityManager.contains(user))
+            user = entityManager.merge(user);
+        return user;
+    }
+
+    @Override
+    @Transactional
+    public void deleteUser(User user) {
+        LOGGER.debug("Deleting... ", user);
         if (entityManager.contains(user))
             entityManager.remove(user);
         else
@@ -54,20 +78,9 @@ public class UserServiceBean implements UserService {
     }
 
     @Override
-    @Transactional(readOnly = true)
-    public User getUserById(long id) {
-        LOGGER.debug(">>> getUserById for id =" + id);
-        User user = repository.findOne(id);
-        LOGGER.debug("user = " + user);
-        return user;
-    }
-
-    @Override
-    @Transactional(readOnly = true)
-    public List<User> findAllUsers() {
-        LOGGER.debug("Retrieving the list of all users");
-        List<User> users = repository.findAll();
-        LOGGER.debug("users = " + users);
-        return users;
+    @Transactional
+    public void deleteAllUsers() {
+        LOGGER.debug("Removing the list of all users...");
+        repository.deleteAll();
     }
 }

@@ -10,7 +10,7 @@ logging:
   level:
     com.kaluzny: DEBUG
     org.springframework: INFO
-    org.hibernate: DEBUG
+    org.hibernate: INFO
 
 # Server configuration
 server:
