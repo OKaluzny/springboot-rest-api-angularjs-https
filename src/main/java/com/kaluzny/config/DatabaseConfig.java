@@ -1,6 +1,5 @@
 package com.kaluzny.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +10,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import javax.inject.Inject;
 import javax.sql.DataSource;
 import java.util.Properties;
 
@@ -20,13 +20,13 @@ public class DatabaseConfig {
 
     private DataSource dataSource;
     private LocalContainerEntityManagerFactoryBean entityManagerFactory;
-    @Value("${dataSource.driverClassName}")
+    @Value("${database.driverClassName}")
     private String driver;
-    @Value("${dataSource.url}")
+    @Value("${database.url}")
     private String url;
-    @Value("${dataSource.username}")
+    @Value("${database.username}")
     private String username;
-    @Value("${dataSource.password}")
+    @Value("${database.password}")
     private String password;
     @Value("${hibernate.dialect}")
     private String dialect;
@@ -39,12 +39,12 @@ public class DatabaseConfig {
     @Value("${entitymanager.packagesToScan}")
     private String entitymanagerPackagesToScan;
 
-    @Autowired
+    @Inject
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
-    @Autowired
+    @Inject
     public void setEntityManagerFactory(LocalContainerEntityManagerFactoryBean entityManagerFactory) {
         this.entityManagerFactory = entityManagerFactory;
     }

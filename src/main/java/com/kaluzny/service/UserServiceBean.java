@@ -1,7 +1,7 @@
 package com.kaluzny.service;
 
 import com.kaluzny.domain.User;
-import com.kaluzny.repository.UserRepository;
+import com.kaluzny.domain.UserRepository;
 import com.kaluzny.service.exception.UserAlreadyExistsException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

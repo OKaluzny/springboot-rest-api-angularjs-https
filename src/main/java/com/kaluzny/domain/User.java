@@ -1,7 +1,6 @@
 package com.kaluzny.domain;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "user_title")
@@ -12,11 +11,9 @@ public class User {
     @Column(name = "ID", nullable = false, updatable = false)
     private long id;
 
-    @NotNull
     @Column(name = "TITLE", nullable = false)
     private String title;
 
-    @NotNull
     @Column(name = "VALUE", nullable = false)
     private long value;
 

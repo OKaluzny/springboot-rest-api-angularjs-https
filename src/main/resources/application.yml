@@ -17,12 +17,12 @@ server:
   port: 8080
   sessionTimeout: 30
 
-#PackagesToScan
+#EntityManager
 entitymanager:
   packagesToScan: com.kaluzny.domain
 
 # Database
-dataSource:
+database:
   driverClassName: com.mysql.jdbc.Driver
   url: jdbc:mysql://localhost:3306/userdb?createDatabaseIfNotExist=true
   username: user

@@ -1,14 +1,14 @@
 # Simple Spring Boot RESTFul web service example with MySQL, Hibernate and Spring Security.
 
 [![Build Status](https://travis-ci.org/OKaluzny/spring-boot-rest.svg?branch=master)](https://travis-ci.org/OKaluzny/spring-boot-rest)
-[![Coverage Status](https://coveralls.io/repos/github/OKaluzny/spring-boot-rest/badge.svg?branch=master)](https://coveralls.io/github/OKaluzny/spring-boot-rest?branch=master)
 
 # Tools
 
+* Version Control - [Git 2.6.x] (https://git-scm.com/)
 * Build Automation - [Maven 3.3.x](https://maven.apache.org/)
 * Static Analysis - [FindBugs 3.0.1](http://findbugs.sourceforge.net/)
 * Continuous integration - [Travis CI](https://travis-ci.org)
-* Web Server - [Apache Tomcat 7](http://tomcat.apache.org/)
+* Web Server - [Apache Tomcat 8](http://tomcat.apache.org/)
 * Relation database - [MySQL database] (https://www.mysql.com/)
 * Hibernate (as JPA implementation)
 * Spring Security (as basic authentication).
