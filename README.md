@@ -8,7 +8,7 @@
 * Build Automation - [Maven 3.3.x](https://maven.apache.org/)
 * Static Analysis - [FindBugs 3.0.1](http://findbugs.sourceforge.net/)
 * Continuous integration - [Travis CI](https://travis-ci.org)
-* Web Server - [Apache Tomcat 7](http://tomcat.apache.org/)
+* Web Server - [Apache Tomcat 8](http://tomcat.apache.org/)
 * Relation database - [MySQL database] (https://www.mysql.com/)
 * Hibernate (as JPA implementation)
 * Spring Security (as basic authentication).
