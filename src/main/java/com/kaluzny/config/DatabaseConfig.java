@@ -36,18 +36,18 @@ public class DatabaseConfig {
     private String show_sql;
     @Value("${hibernate.format_sql}")
     private String format_sql;
-    @Value("${entitymanager.packagesToScan}")
-    private String entitymanagerPackagesToScan;
+    @Value("${entityManager.packagesToScan}")
+    private String entityManagerPackagesToScan;
 
     @Inject
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
     }
-
+    /*
     @Inject
     public void setEntityManagerFactory(LocalContainerEntityManagerFactoryBean entityManagerFactory) {
         this.entityManagerFactory = entityManagerFactory;
-    }
+    }*/
 
     @Bean
     public DataSource dataSource() {
@@ -65,7 +65,7 @@ public class DatabaseConfig {
 
         entityManagerFactoryBean.setDataSource(dataSource);
 
-        entityManagerFactoryBean.setPackagesToScan(entitymanagerPackagesToScan);
+        entityManagerFactoryBean.setPackagesToScan(entityManagerPackagesToScan);
         entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         Properties jpaProperties = new Properties();
         jpaProperties.put(org.hibernate.cfg.Environment.DIALECT, dialect);
