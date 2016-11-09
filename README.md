@@ -1,6 +1,6 @@
 # Simple Spring Boot RESTFul web service example with MySQL, Hibernate and Spring Security.
 
-[![Build Status](https://travis-ci.org/OKaluzny/spring-boot-rest.svg?branch=master)](https://travis-ci.org/OKaluzny/spring-boot-rest)
+[![Build Status](https://travis-ci.org/OKaluzny/Spring-Boot-RESTFul-Web-Services-CRUD.svg?branch=master)](https://travis-ci.org/OKaluzny/Spring-Boot-RESTFul-Web-Services-CRUD)
 
 # Tools
 
