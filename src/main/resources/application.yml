@@ -12,9 +12,13 @@ logging:
     org.springframework: INFO
     org.hibernate: INFO
 
-# Server configuration
+# Configure the server to run with SSL/TLS and using HTTPS
 server:
-  port: 8080
+  port: 8443
+  ssl:
+    key-store: classpath:tomcat.keystore
+    key-store-password: password
+    key-password: password
   sessionTimeout: 30
 
 #EntityManager

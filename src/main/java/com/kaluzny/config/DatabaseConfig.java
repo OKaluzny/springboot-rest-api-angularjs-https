@@ -18,8 +18,6 @@ import java.util.Properties;
 @EnableTransactionManagement
 public class DatabaseConfig {
 
-    private DataSource dataSource;
-    private LocalContainerEntityManagerFactoryBean entityManagerFactory;
     @Value("${database.driverClassName}")
     private String driver;
     @Value("${database.url}")
@@ -39,15 +37,19 @@ public class DatabaseConfig {
     @Value("${entityManager.packagesToScan}")
     private String entityManagerPackagesToScan;
 
+    private DataSource dataSource;
+
     @Inject
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
     }
-    /*
+
+    private LocalContainerEntityManagerFactoryBean entityManagerFactory;
+
     @Inject
     public void setEntityManagerFactory(LocalContainerEntityManagerFactoryBean entityManagerFactory) {
         this.entityManagerFactory = entityManagerFactory;
-    }*/
+    }
 
     @Bean
     public DataSource dataSource() {
