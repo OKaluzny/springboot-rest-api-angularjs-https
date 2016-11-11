@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.inject.Inject;
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController("user")
@@ -32,12 +31,14 @@ public class UserController {
     /* Create a user */
     @RequestMapping(
             value = "user",
-            method = {RequestMethod.POST, RequestMethod.GET})
-    public ResponseEntity<User> createUser(@RequestBody @Valid User user, UriComponentsBuilder ucBuilder) {
+            method = {RequestMethod.POST, RequestMethod.PUT})
+    public ResponseEntity<User> createUser(@RequestBody User user, UriComponentsBuilder ucBuilder) {
         LOGGER.debug(">>> Creating user with id: " + user.getId());
-
+        if (userService.isUserExist(user)) {
+            LOGGER.debug("A user with name " + user.getId() + "exist.");
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
+        }
         userService.saveUser(user);
-
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(ucBuilder.path("user/{id}").buildAndExpand(user.getId()).toUri());
         return new ResponseEntity<>(user, headers, HttpStatus.CREATED);
