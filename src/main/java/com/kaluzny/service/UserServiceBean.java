@@ -12,8 +12,6 @@ import org.springframework.validation.annotation.Validated;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Service("userService")
@@ -34,7 +32,7 @@ public class UserServiceBean implements UserService {
 
     @Override
     @Transactional
-    public User saveUser(@NotNull @Valid User user) {
+    public User saveUser(User user) {
         LOGGER.debug("Save {}", user);
         User existing = repository.findOne(user.getId());
         if (existing != null) {
@@ -82,5 +80,11 @@ public class UserServiceBean implements UserService {
     public void deleteAllUsers() {
         LOGGER.debug("Removing the list of all users...");
         repository.deleteAll();
+    }
+
+    @Override
+    @Transactional
+    public boolean isUserExist(User user) {
+        return findUserById(user.getId()) != null;
     }
 }
