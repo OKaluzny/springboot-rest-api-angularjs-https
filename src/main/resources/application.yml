@@ -2,6 +2,7 @@
 spring:
   profiles:
     active: development
+
 logging:
   file: logs/dev_app.log
   pattern:
@@ -16,10 +17,10 @@ logging:
 server:
   port: 8443
   ssl:
-    key-store: classpath:tomcat.keystore
-    key-store-password: password
-    key-password: password
-  sessionTimeout: 30
+    key-store: classpath:keystore.p12
+    key-store-password: tomcatadmin
+    keyStoreType: PKCS12
+    keyAlias: tomcat
 
 #EntityManager
 entityManager:
