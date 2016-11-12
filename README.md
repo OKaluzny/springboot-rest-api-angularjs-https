@@ -4,12 +4,12 @@
 
 # Tools
 
-* Version Control - [Git 2.6.x] (https://git-scm.com/)
+* Version Control - [Git 2.6.x](https://git-scm.com/)
 * Build Automation - [Maven 3.3.x](https://maven.apache.org/)
 * Static Analysis - [FindBugs 3.0.1](http://findbugs.sourceforge.net/)
 * Continuous integration - [Travis CI](https://travis-ci.org)
 * Web Server - [Apache Tomcat 8](http://tomcat.apache.org/)
-* Relation database - [MySQL database] (https://www.mysql.com/)
+* Relation database - [MySQL database](https://www.mysql.com/)
 * Hibernate (as JPA implementation)
 * Spring Security (as basic authentication).
 
@@ -20,6 +20,8 @@ Scripts for the local environment:
 * `app-build ` - build the application.
 
 * `app-deploy ` - deploy the application.
+
+* `app-check ` - deploy the SonarQube.
 
 # The example in the Postman:
 

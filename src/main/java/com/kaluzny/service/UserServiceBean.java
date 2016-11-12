@@ -14,16 +14,17 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
-@Service("userService")
+@Service
 @Validated
+@Transactional
 public class UserServiceBean implements UserService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceBean.class);
 
+    private UserRepository repository;
+
     @PersistenceContext
     private EntityManager entityManager;
-
-    private UserRepository repository;
 
     @Inject
     public UserServiceBean(UserRepository repository) {
@@ -31,60 +32,50 @@ public class UserServiceBean implements UserService {
     }
 
     @Override
-    @Transactional
+    public boolean isUserExist(User user) {
+        return findUserById(user.getId()) != null;
+    }
+
+    @Override
     public User saveUser(User user) {
         LOGGER.debug("Save {}", user);
         User existing = repository.findOne(user.getId());
         if (existing != null) {
             throw new UserAlreadyExistsException(
-                    String.format("There already exists a user with id=%s", user.getId()));
+                    String.format("There already exists a user with id = %s", user.getId()));
         }
         return repository.save(user);
     }
 
     @Override
-    @Transactional(readOnly = true)
     public User findUserById(long id) {
-        LOGGER.debug("Search by id: " + id);
+        LOGGER.debug("Search user by id: " + id);
         return repository.findOne(id);
     }
 
     @Override
-    @Transactional(readOnly = true)
     public List<User> findAllUsers() {
-        LOGGER.debug("Retrieving the list of all users...");
+        LOGGER.debug("Retrieve the list of all users!");
         return repository.findAll();
     }
 
     @Override
-    @Transactional
     public User updateUser(User user) {
-        LOGGER.debug("Updating... ", user);
+        LOGGER.debug("User with id: " + user.getId() + " updated! ");
         if (!entityManager.contains(user))
             user = entityManager.merge(user);
         return user;
     }
 
     @Override
-    @Transactional
-    public void deleteUser(User user) {
-        LOGGER.debug("Deleting... ", user);
-        if (entityManager.contains(user))
-            entityManager.remove(user);
-        else
-            entityManager.remove(entityManager.merge(user));
+    public void deleteUser(Long id) {
+        LOGGER.debug("User by id: " + id + " Deleted!");
+        repository.delete(id);
     }
 
     @Override
-    @Transactional
     public void deleteAllUsers() {
-        LOGGER.debug("Removing the list of all users...");
+        LOGGER.debug("The list all users deleted!");
         repository.deleteAll();
-    }
-
-    @Override
-    @Transactional
-    public boolean isUserExist(User user) {
-        return findUserById(user.getId()) != null;
     }
 }

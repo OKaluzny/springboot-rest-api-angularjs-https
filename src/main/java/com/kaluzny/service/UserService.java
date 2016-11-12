@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface UserService {
 
+    boolean isUserExist(User user);
+
     User saveUser(User user);
 
     User findUserById(long id);
@@ -14,9 +16,7 @@ public interface UserService {
 
     User updateUser(User user);
 
-    void deleteUser(User user);
+    void deleteUser(Long id);
 
     void deleteAllUsers();
-
-    boolean isUserExist(User user);
 }

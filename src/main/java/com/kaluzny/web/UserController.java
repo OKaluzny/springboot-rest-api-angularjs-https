@@ -31,7 +31,7 @@ public class UserController {
     /* Create a user */
     @RequestMapping(
             value = "user",
-            method = {RequestMethod.POST, RequestMethod.PUT})
+            method = RequestMethod.POST)
     public ResponseEntity<User> createUser(@RequestBody User user, UriComponentsBuilder ucBuilder) {
         LOGGER.debug(">>> Creating user with id: " + user.getId());
         if (userService.isUserExist(user)) {
@@ -108,7 +108,7 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-        userService.deleteUser(user);
+        userService.deleteUser(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
