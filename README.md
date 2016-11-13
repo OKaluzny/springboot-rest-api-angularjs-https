@@ -1,8 +1,8 @@
-# Simple Spring Boot RESTFul web service example with MySQL, Hibernate and Spring Security.
+## RESTFul HTTPS API (web service) with Spring Boot.
 
 [![Build Status](https://travis-ci.org/OKaluzny/Spring-Boot-RESTFul-Web-Services-CRUD.svg?branch=master)](https://travis-ci.org/OKaluzny/Spring-Boot-RESTFul-Web-Services-CRUD)
 
-# Tools
+### Tools
 
 * Version Control - [Git 2.6.x](https://git-scm.com/)
 * Build Automation - [Maven 3.3.x](https://maven.apache.org/)
@@ -13,17 +13,18 @@
 * Hibernate (as JPA implementation)
 * Spring Security (as basic authentication).
 
-# Build and Deploy
+ To run this application use:
 
-Scripts for the local environment:
+```bash
+mvn spring-boot:run
+  ```
 
-* `app-build ` - build the application.
+To run the SonarQube use:
+```bash
+mvn clean install sonar:sonar
+```
 
-* `app-deploy ` - deploy the application.
-
-* `app-check ` - deploy the SonarQube.
-
-# The example in the Postman:
+### The view in the Postman:
 
 ![alt tag](http://i.piccy.info/i9/6f4fab5a4515bc2487b1264b2c3d99ae/1477921963/48623/1085055/basic1.jpg)
 
