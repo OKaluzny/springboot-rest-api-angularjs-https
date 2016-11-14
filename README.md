@@ -12,6 +12,15 @@
 * Hibernate (as JPA implementation)
 * Spring Security (as basic authentication).
 
+### This is what our REST API does:
+
+* POST request to `/api/v1/objects/` with a user object as JSON creates a new user;
+* GET request to `/api/v1/objects/` returns a list of users;
+* GET request to `/api/v1/objects/1` returns the user with ID 1;
+* PUT request to `/api/v1/objects/3` with a user object as JSON updates the user with ID 3;
+* DELETE request to `/api/v1/objects/4` deletes the user with ID 4;
+* DELETE request to `/api/v1/objects/` deletes all the users.
+
 #####To run this application use:
 
 ```bash
