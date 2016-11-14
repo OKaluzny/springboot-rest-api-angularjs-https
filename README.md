@@ -26,6 +26,4 @@ mvn clean install sonar:sonar
 
 ### The view in the Postman:
 
-![alt tag](http://i.piccy.info/i9/6f4fab5a4515bc2487b1264b2c3d99ae/1477921963/48623/1085055/basic1.jpg)
-
-![alt tag](http://i.piccy.info/i9/a228232e1f46a8e972a6210e89eea46c/1477921146/58237/1085055/basic.jpg)
+![alt tag](http://i.piccy.info/i9/6b24a9828fea6183c943f6aedbff1bb5/1479141242/61292/1085055/rest10.jpg)
