@@ -2,24 +2,24 @@
 
 [![Build Status](https://travis-ci.org/OKaluzny/Spring-Boot-RESTFul-Web-Services-CRUD.svg?branch=master)](https://travis-ci.org/OKaluzny/Spring-Boot-RESTFul-Web-Services-CRUD)
 
-### Tools
+### Tools:
 
-* Version Control - [Git 2.6.x](https://git-scm.com/)
 * Build Automation - [Maven 3.3.x](https://maven.apache.org/)
 * Static Analysis - [FindBugs 3.0.1](http://findbugs.sourceforge.net/)
-* Continuous integration - [Travis CI](https://travis-ci.org)
-* Web Server - [Apache Tomcat 8](http://tomcat.apache.org/)
+* Continuous Integration - [Travis CI](https://travis-ci.org)
+* Embedded Web Server - [Apache Tomcat](http://tomcat.apache.org/)
 * Relation database - [MySQL database](https://www.mysql.com/)
 * Hibernate (as JPA implementation)
 * Spring Security (as basic authentication).
 
- To run this application use:
+#####To run this application use:
 
 ```bash
 mvn spring-boot:run
   ```
 
-To run the SonarQube use:
+#####To run the SonarQube use:
+
 ```bash
 mvn clean install sonar:sonar
 ```

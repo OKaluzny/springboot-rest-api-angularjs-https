@@ -16,7 +16,7 @@ import javax.inject.Inject;
 import java.util.List;
 
 @RestController("user")
-@RequestMapping("/")
+@RequestMapping("/api/v1/")
 public class UserController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
@@ -30,7 +30,7 @@ public class UserController {
 
     /* Create a user */
     @RequestMapping(
-            value = "user",
+            value = "objects",
             method = RequestMethod.POST)
     public ResponseEntity<User> createUser(@RequestBody User user, UriComponentsBuilder ucBuilder) {
         LOGGER.debug(">>> Creating user with id: " + user.getId());
@@ -46,7 +46,7 @@ public class UserController {
 
     /* Reading single user */
     @RequestMapping(
-            value = "user/{id}",
+            value = "objects/{id}",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<User> getUser(@PathVariable("id") Long id) {
@@ -61,7 +61,7 @@ public class UserController {
 
     /* Reads all users */
     @RequestMapping(
-            value = "user",
+            value = "objects",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<User>> listAllUsers() {
@@ -76,7 +76,7 @@ public class UserController {
 
     /* Update a user */
     @RequestMapping(
-            value = "user/{id}",
+            value = "objects/{id}",
             method = RequestMethod.PUT)
     public ResponseEntity<User> updateUserFromDB(@PathVariable("id") long id,
                                                  @RequestBody User user) {
@@ -97,7 +97,7 @@ public class UserController {
 
     /* Delete a user */
     @RequestMapping(
-            value = "user/{id}",
+            value = "objects/{id}",
             method = RequestMethod.DELETE)
     public ResponseEntity<User> deleteUserFromDB(@PathVariable("id") long id) {
         LOGGER.debug("Fetching & Deleting User with id: " + id + " is successfully removed from database!");
@@ -114,7 +114,7 @@ public class UserController {
 
     /* Delete all users */
     @RequestMapping(
-            value = "user",
+            value = "objects",
             method = RequestMethod.DELETE)
     public ResponseEntity<User> deleteAllUsers() {
         userService.deleteAllUsers();
