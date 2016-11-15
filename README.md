@@ -1,6 +1,6 @@
 ## RESTFul HTTPS API (web service) with Spring Boot.
 
-[![Build Status](https://travis-ci.org/OKaluzny/Spring-Boot-RESTFul-Web-Services-CRUD.svg?branch=master)](https://travis-ci.org/OKaluzny/Spring-Boot-RESTFul-Web-Services-CRUD)
+[![Build Status](https://travis-ci.org/OKaluzny/spring-rest-service-https.svg?branch=master)](https://travis-ci.org/OKaluzny/spring-rest-service-https)
 
 ### Tools:
 
