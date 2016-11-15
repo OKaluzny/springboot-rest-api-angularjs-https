@@ -1,4 +1,4 @@
-## RESTFul HTTPS API (web service) with Spring Boot.
+## RESTFul HTTPS API with Spring Boot.
 
 [![Build Status](https://travis-ci.org/OKaluzny/spring-rest-service-https.svg?branch=master)](https://travis-ci.org/OKaluzny/spring-rest-service-https)
 
@@ -14,7 +14,7 @@
 
 ### This is what my REST API does:
 
-* Go to `http://localhost:8443` to test:
+Go to `http://localhost:8443` to test:
 
 * POST request to `/api/v1/objects/` with a "object" object as JSON creates a new "object";
 * GET request to `/api/v1/objects/` returns a list of "objects";
