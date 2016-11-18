@@ -7,7 +7,7 @@
 * Maven;
 * FindBugs;
 * Travis CI;
-* Tomcat;
+* Tomcat embedded;
 * Spring Boot;
 * Spring MVC;
 * Spring Data JPA;
