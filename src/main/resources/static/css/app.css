@@ -17,8 +17,8 @@ body, .form-control {
 }
 
 .formcontainer {
-    background-color: #DAE8E8;
-    padding: 20px;
+    background-color: rgba(234, 231, 231, 0.82);
+    padding: 30px;
 }
 
 .tablecontainer {
