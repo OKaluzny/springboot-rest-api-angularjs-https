@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.kaluzny</groupId>
-    <artifactId>spring-rest-service-https</artifactId>
+    <artifactId>spring-rest-api-angularjs-https</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>spring-rest-service-https</name>
+    <name>spring-rest-api-angularjs-https</name>
     <description>Test task project</description>
 
     <parent>

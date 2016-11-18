@@ -1,16 +1,20 @@
-## RESTFul HTTPS API with Spring Boot.
+## REST HTTPS API with Spring Boot and Angular JS.
 
-[![Build Status](https://travis-ci.org/OKaluzny/spring-rest-service-https.svg?branch=master)](https://travis-ci.org/OKaluzny/spring-rest-service-https)
+[![Build Status](https://travis-ci.org/OKaluzny/springboot-rest-api-angularjs-https.svg?branch=master)](https://travis-ci.org/OKaluzny/springboot-rest-api-angularjs-https)
 
 ### Technology stack:
 
-* Build Automation - [Maven 3.3.x](https://maven.apache.org/)
-* Static Analysis - [FindBugs 3.0.1](http://findbugs.sourceforge.net/)
-* Continuous Integration - [Travis CI](https://travis-ci.org)
-* Embedded Web Server - [Apache Tomcat](http://tomcat.apache.org/)
-* Relation database - [MySQL database](https://www.mysql.com/)
-* Hibernate (as JPA implementation)
-* Spring Security (as basic authentication).
+* Maven;
+* FindBugs;
+* Travis CI;
+* Tomcat;
+* Spring Boot;
+* Spring MVC;
+* Spring Data JPA;
+* Hibernate (as JPA implementation);
+* MySQL Relation Database;
+* Spring Security (as basic authentication);
+* Angular JS, HTML, CSS.
 
 ### This is what my REST API does:
 
