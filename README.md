@@ -9,6 +9,9 @@
 * Travis CI;
 * Tomcat embedded;
 * Spring Boot;
+* JUnit
+* Logback
+* SLF4J
 * Spring MVC;
 * Spring Data JPA;
 * Hibernate (as JPA implementation);
