@@ -39,7 +39,7 @@
 
                 <div class="row">
                     <div class="form-actions floatRight">
-                        <input type="submit" value="{{!ctrl.user.id ? 'Add' : 'Update'}}" class="btn btn-primary btn-sm"
+                        <input type="submit" value="{{!ctrl.user.id ? 'Create' : 'Update'}}" class="btn btn-primary btn-sm"
                                ng-disabled="myForm.$invalid">
                         <button type="button" ng-click="ctrl.reset()" class="btn btn-warning btn-sm"
                                 ng-disabled="myForm.$pristine">Reset Form
@@ -69,9 +69,9 @@
                     <td><span ng-bind="u.title"></span></td>
                     <td><span ng-bind="u.value"></span></td>
                     <td>
-                        <button type="button" ng-click="ctrl.edit(u.id)" class="btn btn-success custom-width">Edit
+                        <button type="button" ng-click="ctrl.edit(u.id)" class="btn btn-success custom-width">Update
                         </button>
-                        <button type="button" ng-click="ctrl.remove(u.id)" class="btn btn-danger custom-width">Remove
+                        <button type="button" ng-click="ctrl.remove(u.id)" class="btn btn-danger custom-width">Delete
                         </button>
                 </tr>
                 </tbody>

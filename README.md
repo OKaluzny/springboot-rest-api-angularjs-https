@@ -48,4 +48,4 @@ mvn clean install sonar:sonar
 
 ### Open browser and browse at https://localhost:8443
 
-![alt tag](http://i.piccy.info/i9/60aafd469a35780dbe5c15f9bdc136ea/1479501511/76368/1085055/htcb123.jpg)
+![alt tag](http://i.piccy.info/i9/7656c6d92ad0b4f722500bb6ebbf944e/1479758651/77123/1085055/resthttps.jpg)
