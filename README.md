@@ -44,7 +44,7 @@ mvn clean install sonar:sonar
 
 ### The view in the Postman:
 
-![alt tag](http://i.piccy.info/i9/665a540f876b8b1906ce5f8677343aaf/1479502060/67612/1085055/rest10.jpg)
+![alt tag](http://i.piccy.info/i9/805925eb5dd73435f3b1d9d94bafbb39/1479759393/66174/1085055/rest11.jpg)
 
 ### Open browser and browse at https://localhost:8443
 
