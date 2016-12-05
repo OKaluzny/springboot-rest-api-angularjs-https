@@ -12,7 +12,7 @@
 * JUnit
 * Logback
 * SLF4J
-* Spring MVC;
+* Spring Web;
 * Spring Data JPA;
 * Hibernate (as JPA implementation);
 * MySQL Relation Database;
