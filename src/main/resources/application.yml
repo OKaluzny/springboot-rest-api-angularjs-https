@@ -2,7 +2,19 @@
 spring:
   profiles:
     active: production
-
+# Database
+  datasource:
+    url: jdbc:mysql://localhost:3306/userdb?createDatabaseIfNotExist=true
+    driver-class-name: com.mysql.jdbc.Driver
+    username: user
+    password: user
+# JPA properties
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
 # Logging
 logging:
   file: logs/dev_app.log
@@ -13,25 +25,6 @@ logging:
     com.kaluzny: DEBUG
     org.springframework: INFO
     org.hibernate: INFO
-
-# Database
-database:
-  driverClassName: com.mysql.jdbc.Driver
-  url: jdbc:mysql://localhost:3306/userdb?createDatabaseIfNotExist=true
-  username: user
-  password: user
-
-# Hibernate
-hibernate:
-  dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-  hbm2ddl.auto: update
-  show_sql: true
-  format_sql: true
-
-#EntityManager
-entityManager:
-  packagesToScan: com.kaluzny.domain
-
 # Configure the server to run with SSL/TLS and using HTTPS
 server:
   port: 8443
