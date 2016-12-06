@@ -27,7 +27,7 @@ mvn spring-boot:run
 
 ### This is what my REST API does:
 
-Go to `https://localhost:8443` to test and must specify a username: `user` and password: `user`
+Go to [https://localhost:8443](https://localhost:8443) to test and must specify a username: `user` and password: `user`
 
 * POST request to `/api/v1/objects/` with a "object" object as JSON creates a new "object";
 * GET request to `/api/v1/objects/` returns a list of "objects";
@@ -46,6 +46,6 @@ mvn clean install sonar:sonar
 
 ![alt tag](http://i.piccy.info/i9/805925eb5dd73435f3b1d9d94bafbb39/1479759393/66174/1085055/rest11.jpg)
 
-### Open browser and browse at `https://localhost:8443`
+_**Open browser and browse at [https://localhost:8443](https://localhost:8443)**_
 
 ![alt tag](http://i.piccy.info/i9/7656c6d92ad0b4f722500bb6ebbf944e/1479758651/77123/1085055/resthttps.jpg)
