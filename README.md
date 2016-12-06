@@ -27,7 +27,7 @@ mvn spring-boot:run
 
 ### This is what my REST API does:
 
-Go to [https://localhost:8443](https://localhost:8443) to test and must specify a username: `user` and password: `user`
+Go to `https://localhost:8443` to test and must specify a username: `user` and password: `user`
 
 * POST request to `/api/v1/objects/` with a "object" object as JSON creates a new "object";
 * GET request to `/api/v1/objects/` returns a list of "objects";
