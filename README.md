@@ -46,6 +46,7 @@ mvn clean install sonar:sonar
 
 ![alt tag](http://i.piccy.info/i9/805925eb5dd73435f3b1d9d94bafbb39/1479759393/66174/1085055/rest11.jpg)
 
-_**Open browser and browse at [https://localhost:8443](https://localhost:8443)**_
+_**Open browser and browse at: 
+[https://localhost:8443](https://localhost:8443)**_
 
 ![alt tag](http://i.piccy.info/i9/7656c6d92ad0b4f722500bb6ebbf944e/1479758651/77123/1085055/resthttps.jpg)
