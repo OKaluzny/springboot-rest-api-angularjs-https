@@ -36,13 +36,11 @@ Go to `https://localhost:8443` to test and must specify a username: `user` and p
 * DELETE request to `/api/v1/objects/4` deletes the "object" with ID 4;
 * DELETE request to `/api/v1/objects/` deletes all the "objects".
 
-_**To run the SonarQube use:**_
-
-```bash
-mvn clean install sonar:sonar
-```
-
 ### The view in the Postman:
+
+[https://localhost:8443/api/v1/objects](https://localhost:8443/api/v1/objects) 
+
+Message body: `{"title":"Absorber", "value":"123123"}`
 
 ![alt tag](http://i.piccy.info/i9/805925eb5dd73435f3b1d9d94bafbb39/1479759393/66174/1085055/rest11.jpg)
 
@@ -50,3 +48,9 @@ _**Open browser and browse at:
 [https://localhost:8443](https://localhost:8443)**_
 
 ![alt tag](http://i.piccy.info/i9/7656c6d92ad0b4f722500bb6ebbf944e/1479758651/77123/1085055/resthttps.jpg)
+
+_**To run the SonarQube use:**_
+
+```bash
+mvn clean install sonar:sonar
+```
