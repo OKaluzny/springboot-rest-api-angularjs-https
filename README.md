@@ -1,6 +1,8 @@
 ## REST HTTPS API with Spring Boot and Angular JS.
 
 [![Build Status](https://travis-ci.org/OKaluzny/springboot-rest-api-angularjs-https.svg?branch=master)](https://travis-ci.org/OKaluzny/springboot-rest-api-angularjs-https)
+[![Coverage Status](https://coveralls.io/repos/github/OKaluzny/springboot-rest-api-angularjs-https/badge.svg?branch=master)](https://coveralls.io/github/OKaluzny/springboot-rest-api-angularjs-https?branch=master)
+
 
 ### Technology stack:
 
