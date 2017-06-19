@@ -142,7 +142,7 @@
                 <artifactId>coveralls-maven-plugin</artifactId>
                 <version>4.3.0</version>
                 <configuration>
-                    <repoToken>kkcigWjRVjN8zUppntR9wkKYiyyO8hY9B</repoToken>
+                    <repoToken>DMEO7olDZpWmSQ4j89hImq8QM0qwKN2Mu</repoToken>
                 </configuration>
             </plugin>
             <!-- JaCoCo maven plugin -->
