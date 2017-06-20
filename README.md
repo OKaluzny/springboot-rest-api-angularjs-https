@@ -11,9 +11,9 @@
 * Travis CI;
 * Tomcat embedded;
 * Spring Boot;
-* JUnit
-* Logback
-* SLF4J
+* JUnit;
+* Mockito;
+* Logback (as SLF4J facade);
 * Spring Web;
 * Spring Data JPA;
 * Hibernate (as JPA implementation);

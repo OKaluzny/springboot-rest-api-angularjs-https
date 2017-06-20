@@ -93,13 +93,10 @@
             <version>4.0.0-alpha.5</version>
             <scope>runtime</scope>
         </dependency>
-
-
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
