@@ -12,12 +12,12 @@ spring:
   jpa:
     hibernate:
       # Hibernate ddl auto (create, create-drop, update)
-      ddl-auto: update
+      ddl-auto: create
     # Show or not log for each sql query
     show-sql: true
-    database: mysql
+    database: postgresql
     # The SQL dialect makes Hibernate generate better SQL for the chosen database
-    database-platform: rg.hibernate.dialect.PostgreSQLDialect
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
 # Logging
 logging:
   file: logs/dev_app.log
