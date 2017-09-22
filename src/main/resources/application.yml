@@ -4,10 +4,10 @@ spring:
     active: production
 # Database
   datasource:
-    url: jdbc:mysql://localhost:3306/userdb?createDatabaseIfNotExist=true
-    driver-class-name: com.mysql.jdbc.Driver
-    username: user
-    password: user
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/object_db?createDatabaseIfNotExist=true
+    username: postgres
+    password: postgres
 # JPA properties
   jpa:
     hibernate:
@@ -17,7 +17,7 @@ spring:
     show-sql: true
     database: mysql
     # The SQL dialect makes Hibernate generate better SQL for the chosen database
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database-platform: rg.hibernate.dialect.PostgreSQLDialect
 # Logging
 logging:
   file: logs/dev_app.log
@@ -30,6 +30,11 @@ logging:
     org.hibernate: INFO
 # Configure the server to run with SSL/TLS and using HTTPS
 server:
+  tomcat:
+    basedir: my-tomcat
+    accesslog:
+      enabled: true
+      #pattern: "%t %a %r %s (%D ms)"
   port: 8443
   ssl:
     key-store: classpath:keystore.p12
