@@ -4,20 +4,20 @@ spring:
     active: production
 # Database
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/object_db?createDatabaseIfNotExist=true
-    username: postgres
-    password: postgres
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/userdb?createDatabaseIfNotExist=true
+    username: user
+    password: user
 # JPA properties
   jpa:
     hibernate:
       # Hibernate ddl auto (create, create-drop, update)
-      ddl-auto: create
+      ddl-auto: update
     # Show or not log for each sql query
     show-sql: true
-    database: postgresql
+    database: mysql
     # The SQL dialect makes Hibernate generate better SQL for the chosen database
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
 # Logging
 logging:
   file: logs/dev_app.log

@@ -60,18 +60,18 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <!-- MySQL-connector-java-->
-        <!--<dependency>
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
-        </dependency>-->
+        </dependency>
         <!-- PostgreSQL-->
-        <dependency>
+        <!--dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>9.4-1201-jdbc41</version>
             <scope>runtime</scope>
-        </dependency>
+        </dependency>-->
         <!-- hibernate-core -->
         <dependency>
             <groupId>org.hibernate</groupId>
